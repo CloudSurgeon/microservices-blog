@@ -43,7 +43,7 @@ app.post("/events", async (req, res) => {
   const { type, data } = req.body;
 
   if (type === "CommentModerated") {
-    const { postId, status, id } = data;
+    const { postId, status, id, content } = data;
     const comments = commentsByPostId[postId];
 
     const comment = comments.find((comment) => {
@@ -60,6 +60,7 @@ app.post("/events", async (req, res) => {
         content,
       },
     });
+    console.log(id, " moderated to ", status);
   }
 
   res.send({});
