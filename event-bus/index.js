@@ -26,5 +26,6 @@ app.get("/events", (req, res) => {
 });
 
 app.listen(4005, () => {
+  console.log("Version 21");
   console.log("Event Bus listening on 4005");
 });

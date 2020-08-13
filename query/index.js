@@ -47,6 +47,7 @@ app.post("/events", (req, res) => {
 });
 
 app.listen(4002, async () => {
+  console.log("Version 21");
   console.log("Query Service listening on 4002");
   const res = await axios.get("http://event-bus-srv:4005/events");
 

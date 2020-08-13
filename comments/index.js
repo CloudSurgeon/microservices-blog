@@ -25,7 +25,7 @@ app.post("/posts/:id/comments", (req, res) => {
 
   commentsByPostId[req.params.id] = comments;
 
-  axios.post("http://localhost:4005/events", {
+  axios.post("http://event-bus-srv:4005/events", {
     type: "CommentCreated",
     data: {
       id: commentId,
@@ -67,5 +67,6 @@ app.post("/events", async (req, res) => {
 });
 
 app.listen(4001, () => {
+  console.log("Version 21");
   console.log("Comments Service listening on 4001");
 });

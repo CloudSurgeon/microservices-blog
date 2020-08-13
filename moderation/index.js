@@ -24,5 +24,6 @@ app.post("/events", async (req, res) => {
 });
 
 app.listen(4003, () => {
+  console.log("Version 21");
   console.log("Moderation Service listening on 4003");
 });
